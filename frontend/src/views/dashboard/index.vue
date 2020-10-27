@@ -33,7 +33,7 @@ export default {
   methods: {
     onClickDuiBi: function (){
       var self = this
-      window.backend.Contrast(this.dataForm.src, this.dataForm.dst).then(result => {
+      window.backend.Api.Contrast(this.dataForm.src, this.dataForm.dst).then(result => {
         self.message = result
         self.dialog = true
       }).catch(err => {

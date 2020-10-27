@@ -3,11 +3,9 @@ package main
 import (
   "github.com/leaanthony/mewn"
   "github.com/wailsapp/wails"
+  "gogui/core/api"
 )
 
-func basic() string {
-  return "Hello World!"
-}
 
 func main() {
 
@@ -22,6 +20,8 @@ func main() {
     CSS:    css,
     Colour: "#131313",
   })
-  app.Bind(Contrast)
+
+  var Api = &api.Api{}
+  app.Bind(Api)
   app.Run()
 }
