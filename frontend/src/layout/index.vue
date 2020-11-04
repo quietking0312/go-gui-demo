@@ -1,13 +1,15 @@
 <template>
   <v-app id="inspire">
     <v-app-bar app fixed>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-navigation-drawer
         app
         fixed
-        :mini-variant.sync="drawer">
+        v-model="drawer"
+        clipped
+    >
       <sidebar />
     </v-navigation-drawer>
     <v-main>
@@ -32,10 +34,12 @@ export default {
     AppMain
   },
   data: () => ({
-    drawer: true,
+    drawer: false,
   }),
   props: {
     source: String
+  },
+  methods: {
   }
 }
 </script>
